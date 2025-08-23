@@ -54,5 +54,5 @@ agent = create_deep_agent(
     instructions=supervisor_instructions,
     subagents=[lead_collector, notetaker],
     config_schema=Config,
-    model=init_chat_model(model="google_genai:gemini-2.5-pro", max_tokens=65_535),
-).with_config({"recursion_limit": 100})
+    model=init_chat_model(model="google_genai:gemini-2.5-flash-lite", max_tokens=65_535),
+).with_config({"recursion_limit": 1000})
