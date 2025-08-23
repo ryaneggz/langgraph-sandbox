@@ -7,6 +7,4 @@ services:
     ports:
       - 2024:8000
     volumes:
-      - ./files:/app/files
-      - ./agents:/app/agents
-      - ./langgraph.json:/app/langgraph.json
+      - ./files/leads.csv:/app/files/leads.csv

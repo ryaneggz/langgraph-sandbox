@@ -1,0 +1,15 @@
+**/.env
+*.egg-info
+**/.example.env
+**/.venv/
+**/.git/
+**/.gitignore
+*ignore
+**/.cursorrules
+**/.claudeignore
+**/__pycache__/
+**/files/
+**/.langgraph*
+**/Makefile
+**/.vscode/
+**/docker-compose*.yml
