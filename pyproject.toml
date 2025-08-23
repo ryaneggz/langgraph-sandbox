@@ -1,9 +1,9 @@
 [project]
 name = "langgraph-starter"
 version = "0.1.0"
-description = "Add your description here"
+description = "LangGraph Starter"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
     "deepagents>=0.0.4",
     "exa-py>=1.15.2",
@@ -19,3 +19,7 @@ dependencies = [
 dev = [
     "debugpy>=1.8.16",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["files", "agents"]
