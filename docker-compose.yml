@@ -1,0 +1,12 @@
+services:
+  langgraph:
+    container_name: langgraph
+    image: ghcr.io/ryaneggz/langgraph-starter:latest
+    env_file:
+      - .env
+    ports:
+      - 2024:8000
+    volumes:
+      - ./files:/app/files
+      - ./agents:/app/agents
+      - ./langgraph.json:/app/langgraph.json
