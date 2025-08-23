@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "linkedin_leads": "./agents/linkedin_leads.py:agent"
+  },
+  "env": ".env"
+}
