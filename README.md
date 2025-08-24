@@ -50,6 +50,31 @@ A LangGraph-based starter template for building **collections of AI agents**. Th
    ```bash
    make dev
    ```
+   
+---
+
+## 🖥️ Recommended LangGraph UIs
+
+* **[LangGraph Studio](https://smith.langchain.com/studio)** — Official Studio for visual graph editing & monitoring
+* **[Agent Chat UI](https://agentchat.vercel.app)** — Clean chat interface for testing your agents
+
+---
+
+## 🛠️ Development & Debugging
+
+* **`.vscode/launch.json`** is pre-configured for:
+
+  * **Attach to LangGraph** — Debug a running server on port `5678`
+  * **Debug Script** — Run and debug individual scripts
+
+**Steps:**
+
+1. Run:
+
+   ```bash
+   make debug
+   ```
+2. In VS Code, press **F5** and select **Attach to LangGraph**.
 
 ---
 
@@ -127,31 +152,6 @@ Key files:
 * `.vscode/launch.json` — VS Code debugging configuration
 
 > Tip: Ensure any secrets (API keys, tokens) are only in `.env` and **excluded** from version control.
-
----
-
-## 🖥️ Recommended LangGraph UIs
-
-* **[LangGraph Studio](https://smith.langchain.com/studio)** — Official Studio for visual graph editing & monitoring
-* **[Agent Chat UI](https://agentchat.vercel.app)** — Clean chat interface for testing your agents
-
----
-
-## 🛠️ Development & Debugging
-
-* **`.vscode/launch.json`** is pre-configured for:
-
-  * **Attach to LangGraph** — Debug a running server on port `5678`
-  * **Debug Script** — Run and debug individual scripts
-
-**Steps:**
-
-1. Run:
-
-   ```bash
-   make debug
-   ```
-2. In VS Code, press **F5** and select **Attach to LangGraph**.
 
 ---
 
