@@ -1,4 +1,5 @@
 services:
+  # LangGraph
   langgraph:
     container_name: langgraph
     image: ghcr.io/ryaneggz/langgraph-starter:latest
@@ -6,3 +7,21 @@ services:
       - .env
     ports:
       - 2024:8000
+  # Ollama
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  ollama:
