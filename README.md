@@ -28,7 +28,7 @@ A LangGraph-based starter template for building **collections of AI agents**. Th
    ```bash
    git clone <YOUR_REPO_URL> langgraph-starter
    cd langgraph-starter
-````
+   ```
 
 2. **Install dependencies with uv (recommended)**
 
