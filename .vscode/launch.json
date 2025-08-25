@@ -12,6 +12,16 @@
             "justMyCode": false,
         },
         {
+            "name": "Attach: langgraph in Docker",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": { "host": "localhost", "port": 5678 },
+            "pathMappings": [
+                { "localRoot": "${workspaceFolder}", "remoteRoot": "/deps/langgraph-starter" }
+            ],
+            "justMyCode": true
+        },
+        {
             "name": "Debug Script",
             "type": "python",
             "request": "launch",

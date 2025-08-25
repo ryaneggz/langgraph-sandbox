@@ -10,24 +10,35 @@ const GRAPH_ID = "xml_agent";
 const remoteGraph = new RemoteGraph({ graphId: GRAPH_ID, client });
 const input = {
     messages: [
-      { role: "user", content: "What is the weather in Tokyo?" },
+      { role: "user", content: "TSLA stock price?" },
     ],
   };
 
 async function run(stream = true) {
   // create a thread (or use an existing thread instead)
   const thread = await client.threads.create();
-  const config = { configurable: { thread_id: thread.thread_id }, streamMode: "messages"};
+  const config = {
+    streamMode: "messages",
+    configurable: { 
+      thread_id: thread.thread_id, 
+      model: "ollama:qwen3", 
+      system: "You are a helpful assistant that talks your pirate." 
+    },
+  };
 
   if (stream) {
     // stream outputs from the graph
     for await (const chunk of await remoteGraph.stream(input, config)) {
-      console.log(JSON.stringify(chunk) + "\n");
+      // console.log(JSON.stringify(chunk, null, 2));
+      process.stdout.write(chunk[0].content);
     }
   } else {
     const result = await remoteGraph.invoke(input, config);
-    console.log(result);
+    console.log(result[0].content);
   }
+
+  const threadState = await remoteGraph.getState(config);
+  console.log(JSON.stringify(threadState, null, 2));
 }
 
 run().catch(console.error);
