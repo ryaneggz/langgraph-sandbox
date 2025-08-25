@@ -7,7 +7,13 @@ from langgraph.graph import StateGraph, START
 from langchain.chat_models import init_chat_model
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
-from langchain_core.messages import BaseMessage, HumanMessage, ToolMessage, AIMessage, SystemMessage
+from langchain_core.messages import (
+	BaseMessage,
+	HumanMessage,
+	ToolMessage,
+	AIMessage,
+	SystemMessage
+)
 
 ###########################################
 ## Parser
@@ -64,24 +70,19 @@ class AgentState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
 
 workflow = StateGraph(AgentState)
-tool_node = ToolNode(tools=TOOLS)
-llm_with_tools = init_chat_model("ollama:qwen3:14b").bind_tools(TOOLS)
-
+messages = [
+	SystemMessage(content="You are a helpful assistant that talks like a pirate."),
+	HumanMessage(content="What is the weather in Tokyo?")
+]
 def agent(state: AgentState):
 	prompt_str = input_parser(state["messages"])
-	response = llm_with_tools.invoke([
-		SystemMessage(content="You are a helpful assistant that talks like a pirate."),
-		HumanMessage(content=prompt_str)
-    ])
+	model = init_chat_model("ollama:qwen3:14b").bind_tools(TOOLS)
+	response = model.invoke(messages)
 	return {"messages": [response]}
 
 workflow.add_node("agent", agent)
-workflow.add_node("tools", tool_node)
-workflow.add_conditional_edges(
-	"agent",
-	tools_condition,	
-)
-# Any time a tool is called, we return to the chatbot to decide the next step
+workflow.add_node("tools", ToolNode(tools=TOOLS))
+workflow.add_conditional_edges("agent", tools_condition)
 workflow.add_edge("tools", "agent")
 workflow.add_edge(START, "agent")
 workflow.compile(name="xml_agent", debug=True)
