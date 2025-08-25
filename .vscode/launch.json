@@ -21,6 +21,18 @@
             "envFile": "${workspaceFolder}/.env",
             "justMyCode": false,
             "python": "${workspaceFolder}/.venv/bin/python"
+        },
+        {
+            "name": "Debug JS Client",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/clients/js/client.mjs",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "NODE_OPTIONS": "--inspect",
+                "LANGGRAPH_API_URL": "http://localhost:2024"
+            }
         }
     ]
 }

@@ -22,7 +22,7 @@ async function run(stream = true) {
   if (stream) {
     // stream outputs from the graph
     for await (const chunk of await remoteGraph.stream(input, config)) {
-      console.log(JSON.stringify(chunk));
+      console.log(JSON.stringify(chunk) + "\n\n");
     }
   } else {
     const result = await remoteGraph.invoke(input, config);
