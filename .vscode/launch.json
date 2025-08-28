@@ -15,7 +15,7 @@
             "name": "Debug Python Script",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/agents/linkedin_leads.py",
+            "program": "${workspaceFolder}/agents/openpipe_agent.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
             "envFile": "${workspaceFolder}/.env",
