@@ -23,6 +23,17 @@
             "python": "${workspaceFolder}/.venv/bin/python"
         },
         {
+            "name": "Debug Py Client",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/clients/py/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": false,
+            "python": "${workspaceFolder}/.venv/bin/python"
+        },
+        {
             "name": "Debug JS Client",
             "type": "node",
             "request": "launch",
