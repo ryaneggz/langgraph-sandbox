@@ -10,6 +10,7 @@ dependencies = [
     "langchain-ollama>=0.3.7",
     "langchain-openai>=0.3.31",
     "langchain[google-genai]>=0.3.27",
+    "langgraph-api>=0.4.1",
     "langgraph-cli[inmem]>=0.3.8",
     "pandas>=2.3.2",
     "ratelimit>=2.2.1",
@@ -19,7 +20,3 @@ dependencies = [
 dev = [
     "debugpy>=1.8.16",
 ]
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["files", "agents"]
