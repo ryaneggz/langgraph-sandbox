@@ -1,6 +1,6 @@
 import json
 import random
-from typing import Annotated, Optional, TypedDict
+from typing import Annotated, TypedDict
 from langchain_core.tools import tool
 from langchain_core.runnables.config import RunnableConfig
 from langgraph.types import interrupt
