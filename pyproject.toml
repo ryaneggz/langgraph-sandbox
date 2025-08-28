@@ -20,3 +20,6 @@ dependencies = [
 dev = [
     "debugpy>=1.8.16",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
