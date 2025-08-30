@@ -50,6 +50,16 @@ A LangGraph-based starter template for building **collections of AI agents**. Th
    ```bash
    make dev
    ```
+
+### MCP Server
+
+This project includes an **MCP (Model Context Protocol) server** for enhanced AI integrations.
+
+**Start the MCP server:**
+
+```bash
+python mcp
+```
    
 ---
 
