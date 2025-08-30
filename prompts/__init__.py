@@ -1,0 +1,4 @@
+from .basic import BASIC_SYSTEM_PROMPT
+
+class Prompts:
+    BASIC_SYSTEM_PROMPT = BASIC_SYSTEM_PROMPT
