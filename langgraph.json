@@ -2,6 +2,7 @@
   "dependencies": ["."],
   "image_distro": "wolfi",
   "graphs": {
+    "arcade_dev_auth": "./agents/arcade_auth_example.py:workflow",
     "linkedin_leads": "./agents/linkedin_leads.py:agent",
     "xml_agent": "./agents/xml_agent.py:workflow"
   },
