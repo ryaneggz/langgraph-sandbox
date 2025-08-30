@@ -12,6 +12,7 @@ dependencies = [
     "langchain[google-genai]>=0.3.27",
     "langgraph-api>=0.4.1",
     "langgraph-cli[inmem]>=0.3.8",
+    "markitdown>=0.0.1a3",
     "pandas>=2.3.2",
     "ratelimit>=2.2.1",
 ]
