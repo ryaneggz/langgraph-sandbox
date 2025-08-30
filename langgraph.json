@@ -3,7 +3,7 @@
   "image_distro": "wolfi",
   "graphs": {
     "linkedin_leads": "./agents/linkedin_leads.py:agent",
-    "xml_agent": "./agents/xml_agent.py:workflow"
+    "xml_agent": "./agents/xml_agent.py:graph"
   },
   "env": ".env"
 }
