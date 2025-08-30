@@ -16,6 +16,10 @@ from langchain_core.messages import (
 	SystemMessage
 )
 
+from prompts import Prompts
+from tools import web_scrape
+
+
 ###########################################
 ## Parser
 ###########################################
@@ -62,7 +66,7 @@ def human_assistance(query: str) -> str:
 	human_response = interrupt({"query": query})
 	return human_response["data"]
 
-TOOLS = [get_weather, get_stock_price, human_assistance]
+TOOLS = [get_weather, get_stock_price, human_assistance, web_scrape]
 
 ###########################################
 ## Graph
@@ -74,12 +78,12 @@ workflow = StateGraph(AgentState)
 def agent(state: AgentState, config: RunnableConfig):
 	prompt_str = input_parser(state["messages"])
 	model = init_chat_model(
-     	model=config.get("configurable", {}).get("model", "openai:gpt-5-mini"),
+     	model=config.get("configurable", {}).get("model", "openai:gpt-5-nano"),
 		temperature=config.get("configurable", {}).get("temperature", 0.7),
 		timeout=config.get("configurable", {}).get("timeout", 30),
 	).bind_tools(TOOLS)
 	response = model.invoke([
-		SystemMessage(content=config.get("configurable", {}).get("system", "You are a helpful assistant.")),
+		SystemMessage(content=config.get("configurable", {}).get("system", Prompts.BASIC_SYSTEM_PROMPT)),
 		HumanMessage(content=prompt_str)
 	])
 	return {"messages": [response]}

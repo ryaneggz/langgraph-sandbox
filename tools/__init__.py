@@ -1,5 +1,4 @@
-from .search import linkedin_search
+from .search import linkedin_search, web_scrape
 from .airtable import update_leads
-from .markitdown_processor import process_multiple_urls
 
-__all__ = ["linkedin_search", "update_leads", "process_multiple_urls"]
+__all__ = ["linkedin_search", "update_leads", "web_scrape"]

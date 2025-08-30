@@ -5,14 +5,17 @@ description = "LangGraph Starter"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "beautifulsoup4>=4.13.5",
     "deepagents>=0.0.4",
     "exa-py>=1.15.2",
+    "langchain-community>=0.3.29",
     "langchain-ollama>=0.3.7",
     "langchain-openai>=0.3.31",
     "langchain[google-genai]>=0.3.27",
     "langgraph-api>=0.4.1",
     "langgraph-cli[inmem]>=0.3.8",
     "markitdown>=0.0.1a3",
+    "nest-asyncio>=1.6.0",
     "pandas>=2.3.2",
     "ratelimit>=2.2.1",
 ]
