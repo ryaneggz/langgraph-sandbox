@@ -83,7 +83,8 @@ A LangGraph-based starter template for building **collections of AI agents**. Th
 ```text
 langgraph-starter/
 ├─ agents/
-│  └─ linkedin_leads.py          # LinkedIn lead collection agent (example)
+│  ├─ linkedin_leads.py          # LinkedIn lead collection agent (example)
+│  └─ arcade_dev_auth.py     # Arcade.dev authorization workflow example
 ├─ tools/
 │  ├─ __init__.py
 │  ├─ airtable.py                # Airtable integration tools
@@ -133,6 +134,7 @@ langgraph build                     # Build the application
 1. **LinkedIn Lead Collector** — Searches LinkedIn for potential leads (example logic)
 2. **Note Taker** — Normalizes and organizes collected data
 3. **Airtable Integration** — Persists structured results to Airtable
+4. **Arcade Authorization Example** — Demonstrates human-in-the-loop authorization workflow with Arcade.dev tools
 
 ### Adding a New Agent
 
